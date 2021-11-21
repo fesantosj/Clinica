@@ -13,9 +13,9 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "MEDICO")
 public class Medico extends AbstractEntity<Long> {
-	@Column(nullable = false, unique = true)
+	@Column
 	private String nome;
-	@Column(nullable = false, unique = true)
+	@Column
 	private Integer crm;
 	@ManyToOne
 	@JoinColumn(name = "especialidade_id")

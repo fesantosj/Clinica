@@ -27,6 +27,7 @@ public class EspecialidadeController {
 	
 	@GetMapping("/listar")
 	public String listar(ModelMap model) {
+		model.addAttribute("especialidades", especialidadeService.buscarTodos());
 		return "/especialidade/lista";
 	}
 

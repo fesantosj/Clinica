@@ -2,6 +2,7 @@ package med.saude.domain;
 
 import java.util.List;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
@@ -12,9 +13,10 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "MEDICO")
 public class Medico extends AbstractEntity<Long> {
+	@Column(nullable = false, unique = true)
 	private String nome;
+	@Column(nullable = false, unique = true)
 	private Integer crm;
-
 	@ManyToOne
 	@JoinColumn(name = "especialidade_id")
 	private Especialidade especialidade;

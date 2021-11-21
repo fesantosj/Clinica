@@ -4,6 +4,7 @@ import java.util.List;
 import med.saude.domain.Medico;
 
 public interface MedicoService {
+	
 	void salvar(Medico medico);
 
 	void editar(Medico medico);

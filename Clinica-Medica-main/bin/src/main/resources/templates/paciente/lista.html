@@ -10,12 +10,12 @@
 			<div class="collapse navbar-collapse" id="navbarsExampleDefault">
 				<ul class="navbar-nav mr-auto">
 					<li class="nav-item active"><i class="oi oi-caret-right"></i>
-						<span>Lista de Médicos</span></li>
+						<span>Lista de Cargos</span></li>
 				</ul>
 			</div>
-			<a class="btn btn-primary btn-md" href="/medicos/cadastrar"
+			<a class="btn btn-primary btn-md" href="/pacientes/cadastrar"
 				role="button"> <span class="oi oi-plus" title="Cadastro"
-				aria-hidden="true"></span> <span>Novo Médico</span>
+				aria-hidden="true"></span> <span>Novo Paciente</span>
 			</a>
 		</nav>
 
@@ -26,20 +26,24 @@
 						<tr>
 							<th>#</th>
 							<th>Nome</th>
-							<th>CRM</th>													
+							<th>Sobrenome</th>
+							<th>CPF</th>
+							<th>Data de Nascimento</th>
 						</tr>
 					</thead>
 					<tbody>
-						<tr th:each="p : ${medicos}">
+						<tr th:each="p : ${pacientes}">
 							<td th:text="${p.id}">1</td>
-							<td th:text="${p.nome}">Luiz</td>
-							<td th:text="${p.crm}">00000000</td>
-							<td colspan="2">
-							<a class="btn btn-info btn-sm"
-								th:href="@{/medicos/editar/{id} (id=${p.id})}" role="button">
-								<span class="oi oi-brush" title="Editar" aria-hidden="true"></span>
+							<td th:text="${p.nome}">Robert</td>
+							<td th:text="${p.sobreNome}">London</td>
+							<td th:text="${p.cpf}">000.000.000-00</td>
+							<td
+								th:text="${#temporals.format(p.dataNascimento, 'dd/MM/yyyy')}">10/10/2010</td>
+							<td colspan="2"><a class="btn btn-info btn-sm"
+								th:href="@{/pacientes/editar/{id} (id=${p.id})}" role="button">
+									<span class="oi oi-brush" title="Editar" aria-hidden="true"></span>
 							</a>
-								<button th:id="${'btn_medicos/excluir/' + p.id}" type="button"
+								<button th:id="${'btn_pacientes/excluir/' + p.id}" type="button"
 									class="btn btn-danger btn-sm" data-toggle="modal"
 									data-target="#myModal">
 									<span class="oi oi-circle-x" title="Excluir" aria-hidden="true"></span>

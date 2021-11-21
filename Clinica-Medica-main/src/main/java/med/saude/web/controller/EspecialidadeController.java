@@ -21,25 +21,26 @@ public class EspecialidadeController {
 	private EspecialidadeService especialidadeService;
 
 	@GetMapping("/cadastrar")
-	public String cadastrar() {
+	public String cadastrar(Especialidade especialidade) {
 		return "/especialidade/cadastro";
 	}
 	
 	@GetMapping("/listar")
 	public String listar(ModelMap model) {
+		model.addAttribute("especialidades", especialidadeService.buscarTodos());
 		return "/especialidade/lista";
 	}
 
 	@PostMapping("/salvar")
 	public String salvar(Especialidade especialidade) {
 		especialidadeService.salvar(especialidade);
-		return "redirect:/pacientes/cadastrar";
+		return "redirect:/especialidades/cadastrar";
 	}
 
 	@GetMapping("/editar/{id}")
 	public String preEditar(@PathVariable("id") Long id, ModelMap model) {
 		model.addAttribute("especialidade", especialidadeService.buscarPorId(id));
-		return "/paciente/cadastro";
+		return "/especialidade/cadastro";
 	}
 	
 	@PostMapping("/editar")

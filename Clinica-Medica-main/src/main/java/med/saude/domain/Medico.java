@@ -13,13 +13,13 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "MEDICO")
 public class Medico extends AbstractEntity<Long> {
-	@Column(nullable = false, unique = true)
+	@Column
 	private String nome;
-	@Column(nullable = false, unique = true)
+	@Column
 	private Integer crm;
 	@ManyToOne
 	@JoinColumn(name = "especialidade_id")
-	private Especialidade especialidade;
+	private Especialidade especiality;
 	
 	@ManyToMany
 	@JoinColumn(name = "agendamento_id")
@@ -42,11 +42,11 @@ public class Medico extends AbstractEntity<Long> {
 	}
 
 	public Especialidade getEspecialidade() {
-		return especialidade;
+		return especiality;
 	}
 
 	public void setEspecialidade(Especialidade especialidade) {
-		this.especialidade = especialidade;
+		this.especiality = especialidade;
 	}
 
 

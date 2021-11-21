@@ -46,9 +46,10 @@
 					<div class="form-group col-md-6">
 						<label for="especialidade">Especialidade</label>
 						 <select class="form-control" th:field="*{especialidade}">
-	                         <option th:each="especial:${especialidade}"
+						 	<option value="">Selecione...</option>
+	                        <option th:each="especial:${especialidade}"
 	                          th:value="${especial.id}"
-	                          th:text="${especial.descricao}"
+	                          th:text="${especial.titulo}"
 	                         />
                  		 </select>
 						<div class="invalid-feedback"></div>

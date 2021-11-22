@@ -19,7 +19,7 @@ public class Medico extends AbstractEntity<Long> {
 	private Integer crm;
 	@ManyToOne
 	@JoinColumn(name = "especialidade_id")
-	private Especialidade especiality;
+	private Especialidade especialidade;
 	
 	@ManyToMany
 	@JoinColumn(name = "agendamento_id")
@@ -42,11 +42,11 @@ public class Medico extends AbstractEntity<Long> {
 	}
 
 	public Especialidade getEspecialidade() {
-		return especiality;
+		return especialidade;
 	}
 
 	public void setEspecialidade(Especialidade especialidade) {
-		this.especiality = especialidade;
+		this.especialidade = especialidade;
 	}
 
 

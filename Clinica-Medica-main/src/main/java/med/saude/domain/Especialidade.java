@@ -13,12 +13,6 @@ public class Especialidade extends AbstractEntity<Long> {
 	@Column(nullable = false, unique = true)
 	private String descricao;
 
-//	@OneToMany(mappedBy = "especialidade")
-//	private List<Medico> medicos;
-	
-//	@OneToMany
-//	@JoinColumn(name = "agendamento")
-//	private List<Agendamento> agendamentos;
 
 	public String getTitulo() {
 		return titulo;

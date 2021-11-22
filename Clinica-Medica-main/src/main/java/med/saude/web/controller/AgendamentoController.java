@@ -55,14 +55,13 @@ public class AgendamentoController {
     }
 
     @PostMapping("/salvar")
-    public String salvar(@ModelAttribute Agendamento agendamento,  BindingResult medic,
-	BindingResult especial, BindingResult pacien) {
+    public String salvar(@ModelAttribute Agendamento agendamento,  BindingResult result) {
     	Medico medical = new Medico();
     	Especialidade especiality = new Especialidade(); 
     	Paciente pacient = new Paciente();
-		medical.setId( Long.valueOf(medic.getFieldValue("medicos").toString()));
-		especiality.setId( Long.valueOf(medic.getFieldValue("especialidades").toString()));
-		pacient.setId( Long.valueOf(medic.getFieldValue("pacientes").toString()));
+		medical.setId( Long.valueOf(result.getFieldValue("medicos").toString()));
+		especiality.setId( Long.valueOf(result.getFieldValue("especialidades").toString()));
+		pacient.setId( Long.valueOf(result.getFieldValue("pacientes").toString()));
 		agendamento.setMedicos(medical);
 		agendamento.setEspecialidades(especiality);
 		agendamento.setPacientes(pacient);

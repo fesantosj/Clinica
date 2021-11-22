@@ -21,10 +21,8 @@
 		</nav>
 
 		<div class="container" id="cadastro">
-			<form 
-			th:action="${medico.id == null} ? @{/medicos/salvar} : @{/medicos/editar}"
-			th:object="${medico}" method="POST" 
-			>
+			<form th:action="${medico.id == null} ? @{/medicos/salvar} : @{/medicos/editar}"
+			th:object="${medico}" method="POST" 	>
 				<div class="form-row">
 					<div class="form-group col-md-6">
 						<label for="nome">Nome</label> 
